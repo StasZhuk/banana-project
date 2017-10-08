@@ -1,0 +1,327 @@
+  /* Page Loader */
+
+.js .loading {
+    &::before {
+        content: '';
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #013bbb;
+    }
+    &::after {
+        content: '';
+        position: fixed;
+        z-index: 10000;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin: -25px 0 0 -25px;
+        pointer-events: none;
+        background: #333;
+        border-radius: 50%;
+        animation: loaderAnim 0.5s ease infinite alternate forwards;
+    }
+}
+@keyframes loaderAnim {
+    0% {
+        transform: scale3d(0.5, 0.5, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.content--intro {
+    z-index: 100;
+    height: 200vh;
+}
+.content--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(../img/index/bg-3.jpg);
+}
+.content__inner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.content--intro .content__inner {
+    background: $acsent;
+}
+.shape-wrap {
+    position: relative;
+    z-index: 10;
+    margin: -5px 0 0 0;
+}
+.shape {
+    height: 100vh;
+    width: 100%;
+    display: block;
+    fill: $acsent;
+}
+.content__social {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        transition: 0.2s;
+        &:hover {
+            fill: $red;
+        }
+    }
+}
+.content__left {
+    display: flex;
+    font-family: 'Poiret One', cursive;
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    font-size: 5rem;
+    line-height: 0.6;
+    text-align: left;
+    color: #000;
+}
+.content__right {
+    display: flex;
+    font-family: 'Poiret One', cursive;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 5rem;
+    line-height: 0.6;
+    text-align: right;
+    color: #000;
+    & .present-text-2 {
+        display: flex;
+        align-items: flex-end;
+        .text-go {
+            font-size: 6.5rem;
+        }
+    }
+    & .present-text--small {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+.text-organize {
+    font-size: 7rem;
+    color: $blue;
+    margin-bottom: 5px;
+}
+.text-children-right {
+    font-size: 8.5rem;
+    margin-bottom: 10px;
+    color: $blue;
+}
+.text-holiday {
+    margin-bottom: 20px;
+}
+.text-phone {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 4rem;
+    color: $red;
+}
+.text-laugth {
+    font-size: 10rem;
+    margin-bottom: 5px;
+    color: $blue;
+}
+.content__left-right {
+    display: flex;
+    align-items: flex-end;
+}
+.present-text-2 {
+    font-size: 5rem
+}
+.text-we {
+    text-align: right;
+    margin-top: -5px;
+    color: $blue;
+}
+.present-text {
+    &.present--and {
+        display: flex;
+        align-items: flex-end
+    }
+}
+.present-text--small {
+    margin-left: auto;
+    font-size: 3rem;
+    color: $black;
+}
+.text-give {
+    font-size: 5.7rem;
+}
+.text-children {
+    padding-top: 25px;
+    font-size: 8.2rem;
+    text-transform: uppercase;
+    color: $blue;
+}
+.content__subtitle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .icon {
+        width: 50px;
+        height: 50px;
+        transform: rotate(-90deg);
+        animation: rotateX 10s linear infinite;
+    }
+}
+.content__subtitle-brand {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 7rem;
+    margin-bottom: 50px;
+    color: #F70044;
+}
+.enter {
+    position: relative;
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 14px;
+    line-height: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: pre;
+    color: $acsent;
+    pointer-events: auto;
+    &:hover,
+    &:focus {
+        color: #000;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        margin-left: -2px;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 100%;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $green;
+        border: 2px solid $red;
+        animation: scale 5s linear running infinite;
+    }
+    span {
+        line-height: 1.2;
+    }
+}
+.content__subtitle-img {
+    width: 250px;
+    margin-bottom: 10px;
+    animation: bananRotate 3s linear running infinite;
+}
+.content__subtitle-img-2 {
+    position: absolute;
+    z-index: -1;
+    top: -38px;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 100px;
+    margin-bottom: 10px;
+    animation: bounce 3.5s linear running infinite;
+}
+.minion {
+    width: 160px;
+    height: 100px;
+    margin: 0 auto;
+    background: url('../img/index/minion-enter.png') no-repeat center;
+    background-size: contain;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@keyframes scale {
+    0% {
+        background-color: $green;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        background-color: $red;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        background-color: $green;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes rotateX {
+    0%,
+    45% {
+        transform: rotate(-90deg) rotateX(0deg)
+    }
+    50% {
+        transform: rotate(-90deg) rotateX(180deg)
+    }
+    55%,
+    100% {
+        transform: rotate(-90deg) rotateX(360deg)
+    }
+}
+@keyframes bananRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes bounce {
+    0% {
+        transform: translateX(-50%) translateY(0px) rotate(-5deg);
+    }
+    25% {
+        transform: translateX(-50%) translateY(-10px) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(0px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-50%) translateY(-10px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0px) rotate(-5deg);
+    }
+}

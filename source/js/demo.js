@@ -78,7 +78,7 @@
 				{value: 1, duration: 150, easing: 'linear'}
 			],
 			color: {
-				value: '#ecec11',
+				value: '#f6d600',
 				duration: 1,
 				delay: (t,i,l) => (l-i-1)*15+150
 			}
